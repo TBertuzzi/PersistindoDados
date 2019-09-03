@@ -19,12 +19,13 @@ namespace PersistindoDados.Services
 
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                string ts = DateTime.Now.Ticks.ToString();
+  
+                string api = "https://pokeapi.co/api/v2/pokemon/";
 
-                for (int i = 0; i < 20; i++)
+                for (int i = 1; i < 20; i++)
                 {
                     var response = await httpClient.
-                        GetAsync<Pokemon>($"https://pokeapi.co/api/v2/pokemon/{i.ToString()}");
+                        GetAsync<Pokemon>($"{api}{i}");
 
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
