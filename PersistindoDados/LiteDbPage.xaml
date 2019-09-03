@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="LiteDB"
+             x:Class="PersistindoDados.LiteDbPage">
+
+
+   <ListView HasUnevenRows="true"
+              IsRefreshing = "{Binding Ocupado}"
+              ItemsSource="{Binding Pokemons}"
+              >
+        
+        <ListView.ItemTemplate>
+            
+            <DataTemplate>
+                
+                <ViewCell>
+                    
+                    <Grid Padding="20,30" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*" />
+                            
+                        </Grid.ColumnDefinitions>
+                        
+                        <!--<Image HeightRequest="90" 
+                               WidthRequest = "90"
+                               Source="{Binding UrlImagem}"
+                               Grid.Row="0"
+                               Grid.Column="0"
+                               Grid.RowSpan ="2"/>-->
+                        
+                        <Label Grid.Row="0" 
+                               Grid.Column="1"
+                               Text="{Binding Nome}"
+                               FontSize="Large"
+                               TextColor="#FF5525"/>
+                        
+                         <!--<Label Grid.Row="1" 
+                               Grid.Column="1"
+                               Text="{Binding Descricao}"
+                               FontSize="Small"/>-->
+                        
+                    </Grid>
+                    
+                </ViewCell>
+                
+            </DataTemplate>
+            
+        </ListView.ItemTemplate>
+        
+        
+    </ListView>
+</ContentPage>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Padding="0,60,0,0"
+               Title="Menu"
+             mc:Ignorable="d" x:Class="PersistindoDados.MainPage">
+    <StackLayout>
+        <Label Text="Persistindo Dados com Xamarin.Forms" HorizontalOptions="Center"/>
+
+        <Button Text="LiteDB" FontSize="Medium" Command="{Binding LiteDBCommand}" />
+        <Button Text="Realm" FontSize="Medium" Command="{Binding RealmCommand}"/>
+        <Button Text="MonkeyCache" FontSize="Medium" Command="{Binding MonkeyCacheCommand}"/>
+
+    </StackLayout>
+</ContentPage>
