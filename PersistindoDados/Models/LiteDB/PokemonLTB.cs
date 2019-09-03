@@ -1,5 +1,6 @@
 ﻿using System;
 using LiteDB;
+using Xamarin.Forms;
 
 namespace PersistindoDados.Models.LiteDB
 {
@@ -10,7 +11,12 @@ namespace PersistindoDados.Models.LiteDB
 
         public string Name { get; set; }
 
+        public long Height { get; set; }
+
         public SpritesLDB Sprites { get; set; }
+
+       [BsonIgnore]
+        public ImageSource Image { get; set; }
     }
 
     public class SpritesLDB

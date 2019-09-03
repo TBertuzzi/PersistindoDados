@@ -11,6 +11,9 @@ namespace PersistindoDados.Models
         [JsonProperty("name")]
         public string Name { get; set; }
 
+        [JsonProperty("height")]
+        public long Height { get; set; }
+
         [JsonProperty("sprites")]
         public Sprites Sprites { get; set; }
     }

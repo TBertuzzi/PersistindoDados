@@ -8,6 +8,7 @@
    <ListView HasUnevenRows="true"
               IsRefreshing = "{Binding Ocupado}"
               ItemsSource="{Binding Pokemons}"
+             
               >
         
         <ListView.ItemTemplate>
@@ -15,38 +16,38 @@
             <DataTemplate>
                 
                 <ViewCell>
-                    
-                    <Grid Padding="20,30" >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="*" />
+                        <Grid Padding="20,30" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*" />
                             
-                        </Grid.ColumnDefinitions>
+                            </Grid.ColumnDefinitions>
                         
-                        <!--<Image HeightRequest="90" 
-                               WidthRequest = "90"
-                               Source="{Binding UrlImagem}"
-                               Grid.Row="0"
-                               Grid.Column="0"
-                               Grid.RowSpan ="2"/>-->
+                            <Image HeightRequest="120" 
+                                   WidthRequest = "120"
+                                   Source="{Binding Image}"
+                                   Grid.Row="0"
+                                   Grid.Column="0"
+                                   Grid.RowSpan ="2"/>
+
+                           
+                             <Label Grid.Row="0" 
+                                   Grid.Column="1"
+                                     FontSize="Medium"
+                                   Text="{Binding Id,StringFormat='#{0}'}"/>
+
+                            <Label Grid.Row="1" 
+                                   Grid.Column="1"
+                                   Text="{Binding Name}"
+                                   FontSize="Large"
+                                   TextColor="#FF5525"/>
+                     
                         
-                        <Label Grid.Row="0" 
-                               Grid.Column="1"
-                               Text="{Binding Name}"
-                               FontSize="Large"
-                               TextColor="#FF5525"/>
-                        
-                         <!--<Label Grid.Row="1" 
-                               Grid.Column="1"
-                               Text="{Binding Descricao}"
-                               FontSize="Small"/>-->
-                        
-                    </Grid>
-                    
+                        </Grid>
                 </ViewCell>
                 
             </DataTemplate>
