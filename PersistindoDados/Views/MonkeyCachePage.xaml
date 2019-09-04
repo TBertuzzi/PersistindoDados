@@ -1,8 +1,65 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                Title="MonkeyCache"
+             xmlns:c="clr-namespace:PersistindoDados.Converters"
+             Title="MonkeyCache"
              x:Class="PersistindoDados.MonkeyCachePage">
-    <ContentPage.Content>
-    </ContentPage.Content>
+
+     <ContentPage.Resources>
+        <ResourceDictionary>
+            <c:ImageFromByteArrayConverter x:Key="imageFileCvt" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ListView HasUnevenRows="true"
+              IsRefreshing = "{Binding Ocupado}"
+              ItemsSource="{Binding Pokemons}"
+             CachingStrategy="RecycleElement" 
+              >
+        
+        <ListView.ItemTemplate>
+            
+            <DataTemplate>
+                
+                <ViewCell>
+                        <Grid Padding="20,30" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*" />
+                            
+                            </Grid.ColumnDefinitions>
+                        
+                            <Image HeightRequest="120" 
+                                   WidthRequest = "120"
+                                   Source="{Binding ImageByte, Converter={StaticResource imageFileCvt}}"
+                                   Grid.Row="0"
+                                   Grid.Column="0"
+                                   Grid.RowSpan ="2"/>
+
+                           
+                             <Label Grid.Row="0" 
+                                   Grid.Column="1"
+                                     FontSize="Medium"
+                                   Text="{Binding Id,StringFormat='#{0}'}"/>
+
+                            <Label Grid.Row="1" 
+                                   Grid.Column="1"
+                                   Text="{Binding Name}"
+                                   FontSize="Large"
+                                   TextColor="#FF5525"/>
+                     
+                        
+                        </Grid>
+                </ViewCell>
+                
+            </DataTemplate>
+            
+        </ListView.ItemTemplate>
+        
+        
+    </ListView>
 </ContentPage>

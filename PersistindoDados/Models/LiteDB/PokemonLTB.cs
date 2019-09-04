@@ -15,7 +15,9 @@ namespace PersistindoDados.Models.LiteDB
 
         public SpritesLDB Sprites { get; set; }
 
-       [BsonIgnore]
+        public byte[] ImageByte { get; set; }
+
+        [BsonIgnore]
         public ImageSource Image { get; set; }
     }
 
