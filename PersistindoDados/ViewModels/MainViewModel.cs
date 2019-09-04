@@ -13,8 +13,8 @@ namespace PersistindoDados.ViewModels
         public MainViewModel()
         {
             LiteDBCommand = new Command(ExecuteLiteDBCommand);
-            RealmCommand = new Command(ExecuteLiteDBCommand);
-            MonkeyCacheCommand = new Command(ExecuteLiteDBCommand);
+            RealmCommand = new Command(ExecuteRealmCommand);
+            MonkeyCacheCommand = new Command(ExecuteMonkeyCacheCommand);
         }
 
         private async void ExecuteLiteDBCommand()

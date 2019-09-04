@@ -15,6 +15,7 @@
     <PackageReference Include="LiteDB" Version="4.1.4" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     <PackageReference Include="Xamarin.Helpers" Version="1.0.4" />
+    <PackageReference Include="Realm" Version="4.1.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -24,6 +25,7 @@
     <Folder Include="ViewModels\" />
     <Folder Include="ViewModels\Base\" />
     <Folder Include="Views\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\MainPage.xaml.cs">

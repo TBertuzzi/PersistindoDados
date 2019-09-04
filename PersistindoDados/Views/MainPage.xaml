@@ -9,6 +9,8 @@
     <StackLayout>
         <Label Text="Persistindo Dados com Xamarin.Forms" HorizontalOptions="Center"/>
 
+        <Label x:Name="lvlPrimeira" TextColor="Red" IsVisible="false" Text="Primeira Execução" HorizontalOptions="Center"/>
+
         <Button Text="LiteDB" FontSize="Medium" Command="{Binding LiteDBCommand}" />
         <Button Text="Realm" FontSize="Medium" Command="{Binding RealmCommand}"/>
         <Button Text="MonkeyCache" FontSize="Medium" Command="{Binding MonkeyCacheCommand}"/>

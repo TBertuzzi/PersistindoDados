@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PersistindoDados.ViewModels;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace PersistindoDados
@@ -19,6 +20,12 @@ namespace PersistindoDados
             InitializeComponent();
 
             this.BindingContext = new MainViewModel();
+
+            if (Preferences.Get("PrimeiraExecucao", true))
+            {
+                lvlPrimeira.IsVisible = true;
+                Preferences.Set("PrimeiraExecucao", false);
+            }
         }
     }
 }

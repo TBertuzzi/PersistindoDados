@@ -8,7 +8,7 @@
    <ListView HasUnevenRows="true"
               IsRefreshing = "{Binding Ocupado}"
               ItemsSource="{Binding Pokemons}"
-             
+             CachingStrategy="RecycleElement" 
               >
         
         <ListView.ItemTemplate>
